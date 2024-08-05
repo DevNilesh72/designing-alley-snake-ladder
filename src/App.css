@@ -1,38 +1,81 @@
-.App {
+.main{
+  margin-inline: auto;
+  min-width: 1000px;
+}
+
+header{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 900px 1fr;
+  padding-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  border: 1px solid black;
+  width: 800px;
+  aspect-ratio: 1/1;
+  position: relative;
+  isolation: isolate;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.playerBoard {
+  margin-inline: auto;
+}
+
+.box{
+  border: 1px dashed grey;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.player {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 900;
+  border: 5px solid;
+  translate: 5px 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playerA {
+  color: blue;
+  z-index: 100;
+}
+
+.playerB {
+  color: orangered;
+  z-index: 90;
+}
+
+.ladder {
+  position: absolute;
+  width: 60px;
+  height: calc(80px * 10 - 20px);
+  translate: 5px 5px;
+  border: 5px solid green;
+}
+
+.snake {
+  position: absolute;
+  width: 60px;
+  height: calc(80px * 4 - 20px);
+  translate: 5px 5px;
+  border: 5px solid red;
+  left: 20%;
+}
+
+.diceRoll {
+
 }
